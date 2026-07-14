@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llm-wiki-KB — knowledge bundle on the llm-wiki template</title>
+<meta name="description" content="A knowledge bundle teaching users about the llm-wiki-memory-template: what it is, how to install and operate it, its wiki conventions, knowledge-graph pipeline, extension, and team workflow.">
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1a1a1a; --muted:#5a5a5a; --line:#e6e6e6;
+    --card:#f7f7f8; --accent:#3a5bd9; --code-bg:#f2f2f4; --code-fg:#24292f;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f1115; --fg:#e8e8ea; --muted:#a2a2ad; --line:#24262d;
+      --card:#171a21; --accent:#8aa2ff; --code-bg:#12141a; --code-fg:#d6d9e0;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:2.5rem 1.25rem 4rem}
+  header{border-bottom:1px solid var(--line); padding-bottom:1.5rem; margin-bottom:2rem}
+  .kicker{font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0 0 .4rem}
+  h1{font-size:2rem; margin:.1rem 0 .5rem; line-height:1.2}
+  .lede{color:var(--muted); font-size:1.08rem; margin:.25rem 0 0}
+  h2{font-size:1.15rem; margin:2.2rem 0 .75rem; padding-bottom:.35rem; border-bottom:1px solid var(--line)}
+  p{margin:.6rem 0}
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .muted{color:var(--muted)}
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:.75rem; margin-top:1rem}
+  .card{
+    display:block; background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:.9rem 1rem; color:inherit;
+  }
+  .card:hover{border-color:var(--accent); text-decoration:none}
+  .card b{display:block; font-size:.98rem}
+  .card span{display:block; color:var(--muted); font-size:.85rem; margin-top:.2rem}
+  pre{
+    background:var(--code-bg); color:var(--code-fg); border:1px solid var(--line);
+    border-radius:8px; padding:.85rem 1rem; overflow-x:auto; font-size:.9rem;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .note{background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+    border-radius:8px; padding:.75rem 1rem; color:var(--muted); font-size:.95rem}
+  footer{margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--line);
+    color:var(--muted); font-size:.85rem}
+  ul{margin:.5rem 0; padding-left:1.2rem}
+  li{margin:.25rem 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">LA3D-LLM-Agents federation &middot; knowledge bundle</p>
+    <h1>llm-wiki-KB</h1>
+    <p class="lede">A knowledge bundle that teaches you about the <a href="https://github.com/crcresearch/llm-wiki-memory-template">llm-wiki-memory-template</a>: what it is, how to install and operate it, its wiki conventions, knowledge-graph pipeline, extension, and team workflow.</p>
+  </header>
+
+  <p>The bundle itself is an LLM-authored wiki of interlinked Markdown pages. It is meant to be <em>read by an LLM</em>: you point your agent at it and ask questions, and it answers from the bundle's cited pages. This site is the human-facing front door and the home for supplementary material; the knowledge lives in the wiki.</p>
+
+  <h2>Explore the bundle</h2>
+  <div class="grid">
+    <a class="card" href="https://github.com/LA3D-LLM-Agents/llm-wiki-KB/wiki/Home_llm-wiki-KB">
+      <b>Wiki home &rarr;</b><span>The bundle itself: 13 pages plus a glossary and a decision record.</span>
+    </a>
+    <a class="card" href="https://github.com/LA3D-LLM-Agents/llm-wiki-KB/wiki/What-is-the-llm-wiki-Template">
+      <b>Start here &rarr;</b><span>What-is-the-llm-wiki-Template, the orientation anchor.</span>
+    </a>
+    <a class="card" href="https://github.com/LA3D-LLM-Agents/llm-wiki-KB/wiki/Card_llm-wiki-KB">
+      <b>Agent Card &rarr;</b><span>The federation Card describing this bundle.</span>
+    </a>
+    <a class="card" href="https://la3d-llm-agents.github.io/">
+      <b>Federation index &rarr;</b><span>Discover and query peer bundles in the federation.</span>
+    </a>
+  </div>
+
+  <h2>Consume it via an LLM</h2>
+  <p>With the <code>agent-comms</code> feature enabled in your own template project, ask this bundle directly:</p>
+  <pre>bash scripts/agent-comms/ask.sh llm-wiki-KB "What is the llm-wiki template and how do I install it?"</pre>
+  <p class="muted">Under the hood this shallow-clones the bundle's wiki and runs your LLM over its Markdown. You can also just <a href="https://github.com/LA3D-LLM-Agents/llm-wiki-KB.wiki.git">clone the wiki</a> and point any LLM session at the directory.</p>
+
+  <h2>Supplementary material</h2>
+  <p class="muted">Datasets, figures, and interactive demos for the bundle will be published here. The bundle stays text-first; anything on this site is a pointer target, not a substitute for the wiki pages.</p>
+  <div class="note">Nothing published yet. This section will grow as supplementary artifacts are added.</div>
+
+  <h2>About</h2>
+  <ul>
+    <li>Project repository: <a href="https://github.com/LA3D-LLM-Agents/llm-wiki-KB">LA3D-LLM-Agents/llm-wiki-KB</a></li>
+    <li>Built from the template: <a href="https://github.com/crcresearch/llm-wiki-memory-template">crcresearch/llm-wiki-memory-template</a></li>
+    <li>Pattern background: <a href="https://la3d.github.io/WGRA/">WGRA</a> and the <a href="https://github.com/tobi/llm-wiki">llm-wiki</a> pattern</li>
+  </ul>
+
+  <footer>
+    Part of the <a href="https://la3d-llm-agents.github.io/">LA3D-LLM-Agents</a> knowledge-bundle federation.
+    The bundle is durable, LLM-maintained memory; this page is its front door.
+  </footer>
+</div>
+</body>
+</html>
