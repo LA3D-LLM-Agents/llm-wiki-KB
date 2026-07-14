@@ -48,6 +48,8 @@ This project was instantiated from [crcresearch/llm-wiki-memory-template](https:
 
 ## License
 
-The **bundle content** authored here (the wiki under `wiki/llm-wiki-KB.wiki/`, the `docs/` material, and the GitHub Pages site) is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE). Reuse and adapt it freely with attribution to the llm-wiki-KB bundle (LA3D-LLM-Agents).
+Created by Chris Sweet ([@chrissweet](https://github.com/chrissweet)), authored with Claude Code, under [LA3D-LLM-Agents](https://github.com/LA3D-LLM-Agents).
+
+The **bundle content** authored here (the wiki under `wiki/llm-wiki-KB.wiki/`, the `docs/` material, and the GitHub Pages site) is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE). Reuse and adapt it freely with attribution to: **llm-wiki-KB, created by Chris Sweet (@chrissweet), authored with Claude Code**.
 
 The **template scaffolding** in this repo (`scripts/`, `.claude/`, `wiki/agents/`, `wiki/init-wiki.sh`, `features/`) derives from [crcresearch/llm-wiki-memory-template](https://github.com/crcresearch/llm-wiki-memory-template) and is subject to that project's license; the knowledge-graph extractor under `scripts/kg/` is MIT-derived from [LA3D/llm-wiki-colab](https://github.com/LA3D/llm-wiki-colab) (see its file headers).
