@@ -48,6 +48,17 @@
   code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
   .note{background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
     border-radius:8px; padding:.75rem 1rem; color:var(--muted); font-size:.95rem}
+  .cta{background:var(--card); border:1px solid var(--accent); border-left:4px solid var(--accent);
+    border-radius:12px; padding:1.1rem 1.25rem; margin:1.6rem 0}
+  .cta b{font-size:1.05rem}
+  .cta p{margin:.3rem 0 .85rem; color:var(--muted)}
+  .btn{display:inline-block; background:var(--accent); color:#fff; padding:.5rem .95rem;
+    border-radius:8px; font-weight:600}
+  .btn:hover{text-decoration:none; filter:brightness(1.08)}
+  details{margin-top:.9rem; background:var(--card); border:1px solid var(--line);
+    border-radius:8px; padding:.5rem .95rem}
+  summary{cursor:pointer; color:var(--accent); font-weight:600}
+  details pre{margin:.6rem 0 .2rem}
   footer{margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--line);
     color:var(--muted); font-size:.85rem}
   ul{margin:.5rem 0; padding-left:1.2rem}
@@ -63,6 +74,12 @@
   </header>
 
   <p>The bundle itself is an LLM-authored wiki of interlinked Markdown pages. It is meant to be <em>read by an LLM</em>: you point your agent at it and ask questions, and it answers from the bundle's cited pages. This site is the human-facing front door and the home for supplementary material; the knowledge lives in the wiki.</p>
+
+  <div class="cta">
+    <b>Want to build your own knowledge bundle?</b>
+    <p>This bundle doubles as a worked example. The how-to walks you end to end: instantiate from the template, author the wiki, publish, enroll in the federation, and (optionally) add a supplementary site like this one.</p>
+    <a class="btn" href="https://github.com/LA3D-LLM-Agents/llm-wiki-KB/wiki/Creating-a-Knowledge-Bundle">Read: Creating a Knowledge Bundle &rarr;</a>
+  </div>
 
   <h2>Explore the bundle</h2>
   <div class="grid">
@@ -89,8 +106,27 @@
   <p class="muted">Both resolve <code>llm-wiki-KB</code> against the federation index, shallow-clone the bundle's wiki, and run your LLM over its Markdown. <b>Omit the agent id</b> to use <b>discovery mode</b>: it reads the federation's agent Cards (their descriptions, topics, and capabilities) to find a match for your question &mdash; <code>/ask</code> selects the matching bundle, while the script lists the candidate Cards for you to pick. You can also just <a href="https://github.com/LA3D-LLM-Agents/llm-wiki-KB.wiki.git">clone the wiki</a> and point any LLM session at the directory.</p>
 
   <h2>Supplementary material</h2>
-  <p class="muted">Datasets, figures, and interactive demos for the bundle will be published here. The bundle stays text-first; anything on this site is a pointer target, not a substitute for the wiki pages.</p>
-  <div class="note">Nothing published yet. This section will grow as supplementary artifacts are added.</div>
+  <p>The bundle stays text-first; supplementary artifacts live here as pointer targets, not substitutes for the wiki pages. The first published artifact is this bundle's own <b>test harness</b>, and it doubles as an example of what a bundle can ship alongside the wiki.</p>
+  <p class="muted">The harness pairs the question set with gold-standard answers so an LLM's responses (via <code>ask</code>) can be graded for both correctness and honest reporting: each answer lists the facts it must include and the caveats it must not violate (for example, not presenting a planned feature as shipped).</p>
+  <div class="grid">
+    <a class="card" href="https://github.com/LA3D-LLM-Agents/llm-wiki-KB/blob/main/docs/llm-wiki-template-bundle-seeds.md">
+      <b>Questions &rarr;</b><span>The seed: ~145 questions across 13 topic pages the bundle should answer.</span>
+    </a>
+    <a class="card" href="https://github.com/LA3D-LLM-Agents/llm-wiki-KB/blob/main/docs/llm-wiki-template-bundle-gold-answers.md">
+      <b>Gold-standard answers &rarr;</b><span>Reference answers plus must-include facts, source page, and honest-reporting caveats for grading.</span>
+    </a>
+  </div>
+  <details>
+    <summary>Example entry</summary>
+    <pre>Q: What does instantiate.sh do?
+Answer: Substitutes placeholders, initializes the wiki sub-repo,
+        configures the agent overlay, then self-deletes.
+Must include: placeholder substitution; wiki sub-repo init;
+        overlay config; self-deletes
+Source: Installation-and-Setup
+Caveat (must not violate): it is absent from an instantiated
+        repo because it self-deleted after a successful run</pre>
+  </details>
 
   <h2>About</h2>
   <ul>
