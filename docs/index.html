@@ -86,7 +86,7 @@
   <pre>/ask llm-wiki-KB What is the llm-wiki template and how do I install it?</pre>
   <p><b>Underlying script</b> &mdash; the question <em>must</em> be quoted as a single argument (the script takes exactly two arguments):</p>
   <pre>bash scripts/agent-comms/ask.sh llm-wiki-KB "What is the llm-wiki template and how do I install it?"</pre>
-  <p class="muted">Both resolve <code>llm-wiki-KB</code> against the federation index, shallow-clone the bundle's wiki, and run your LLM over its Markdown. Drop the agent id for discovery mode (pick from a menu). You can also just <a href="https://github.com/LA3D-LLM-Agents/llm-wiki-KB.wiki.git">clone the wiki</a> and point any LLM session at the directory.</p>
+  <p class="muted">Both resolve <code>llm-wiki-KB</code> against the federation index, shallow-clone the bundle's wiki, and run your LLM over its Markdown. <b>Omit the agent id</b> to use <b>discovery mode</b>: it reads the federation's agent Cards (their descriptions, topics, and capabilities) to find a match for your question &mdash; <code>/ask</code> selects the matching bundle, while the script lists the candidate Cards for you to pick. You can also just <a href="https://github.com/LA3D-LLM-Agents/llm-wiki-KB.wiki.git">clone the wiki</a> and point any LLM session at the directory.</p>
 
   <h2>Supplementary material</h2>
   <p class="muted">Datasets, figures, and interactive demos for the bundle will be published here. The bundle stays text-first; anything on this site is a pointer target, not a substitute for the wiki pages.</p>
