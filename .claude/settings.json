@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd wiki/llm-wiki-KB.wiki && git status:*)",
+      "Bash(cd wiki/llm-wiki-KB.wiki && git diff:*)",
+      "Bash(cd wiki/llm-wiki-KB.wiki && git log:*)",
+      "Bash(cd wiki/llm-wiki-KB.wiki && git add:*)",
+      "Bash(cd wiki/llm-wiki-KB.wiki && git commit *)",
+      "Bash(git -C wiki/llm-wiki-KB.wiki status:*)",
+      "Bash(git -C wiki/llm-wiki-KB.wiki diff:*)",
+      "Bash(git -C wiki/llm-wiki-KB.wiki log:*)",
+      "Bash(git -C wiki/llm-wiki-KB.wiki add:*)",
+      "Bash(git -C wiki/llm-wiki-KB.wiki commit *)",
+      "Bash(./scripts/kg/build-graph.sh)",
+      "Bash(./wiki/init-wiki.sh)",
+      "Bash(./wiki/init-wiki.sh *)",
+      "Bash(./wiki/agents/claude-code/setup.sh)",
+      "Bash(./wiki/agents/claude-code/setup.sh *)",
+      "Bash(.venv/bin/python *)",
+      "Bash(uv run python *)"
+    ]
+  }
+}
